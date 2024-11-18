@@ -15,7 +15,7 @@ app.get("/todos", (req, res) => {
 // Todo 추가
 app.post("/todos", (req, res) => {
   const { title } = req.body;
-  const newTodo = { id: todoIdCursor, title };
+  const newTodo = { id: todoIdCursor++, title };
   todos.push(newTodo);
   res.status(201).json(newTodo);
 });
